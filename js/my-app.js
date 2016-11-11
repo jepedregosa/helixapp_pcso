@@ -118,7 +118,7 @@ var myApp = new Framework7({
 function validate(){
    var formData = myApp.formToJSON('#form-login-pcso');
    formData.companyid = "PCSO";
-   formData.clientid = "PCSO_JOEL";
+   formData.clientid = "PCSO_LIVE";
    //alert(formData.clientid);
 	 $$.ajax({
 		url: SERVER_ADDRESS + "/loginservlet?option=AUTHLOGIN",
