@@ -1,0 +1,102 @@
+<div class="pages">
+  <div data-page="requisitioneditdetail" class="page navbar-fixed">
+	<!--<a href="#" class="floating-button color-pink">
+		<i class="icon fa fa-pencil"></i>
+	</a>-->
+	<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+		<div class="center sliding">Edit Requisition</div>
+		<div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
+	  </div>
+	</div>	
+	<!-- Speed Dial Wrap -->
+	  <div class="speed-dial">
+		<!-- FAB inside will open Speed Dial actions -->
+		<a href="#" title="requisition" class="floating-button" onclick="toggleactionbuttons(this,'')">
+		  <!-- First icon is visible when Speed Dial actions are closed -->
+		  <i class="icon icon-arrow-up"></i>
+		  <!-- Second icon is visible when Speed Dial actions are opened -->
+		  <i class="icon icon-arrow-down"></i>
+		</a>
+		<!-- Speed Dial Actions -->
+		<div class="speed-dial-buttons">
+		  <!-- First Speed Dial button -->
+		  <a href="#" title="Save" onclick="toggleactionbuttons(this,'Save')">
+			<i class="icon icon-floppy-disk"></i>
+		  </a>
+		  <!-- First Speed Dial button -->
+		  <a href="#" title="Cancel" onclick="toggleactionbuttons(this,'Cancel')">
+			<i class="icon icon-blocked"></i>
+		  </a>
+		</div>
+	  </div>
+	  <!-- End of Speed Dial -->
+    <div class="page-content">
+      <div class="content-block">
+        <div class="content-block-inner">
+		  <form id="masterForm">
+			<div class="list-block">
+				<ul>
+					<li class="swipeout">
+						<div class="swipeout-content">
+							<div style="display:none;">
+								<div>
+									<span>Transaction ID</span>
+									<div class="">
+										<input type="text" name="TranID" placeholder="Transaction ID" style="border: 1px solid #ccc; padding:5px;" />
+									</div>
+								</div>
+							</div>
+							<div style="display:none;">
+								<div>
+									<span>Transaction Date</span>
+									<div class="">
+										<input type="date" name="TranDate" placeholder="Transaction Date" style="border: 1px solid #ccc; padding:5px;" />
+									</div>
+								</div>
+							</div>
+							<div>
+								<div>
+									<span>Details</span>
+									<div class="">
+										<textarea name="Details" placeholder="Details" style="border: 1px solid #ccc; padding:5px;"></textarea>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div>
+								  <span>Required Date</span>
+								  <div>
+									<input type="date"  name="RequiredDate" placeholder="Required Date" style="border: 1px solid #ccc;">
+								  </div>
+								</div>
+							</div>
+							<div style="display: none;">
+								<input type="text"  name="BatNbr">
+							</div>
+							<div style="display: none;">
+								<input type="text"  name="TranType">
+							</div>
+							<div style="display: none;">
+								<input type="text"  name="SeqID">
+							</div>
+							
+						</div>
+					</li>
+				</ul>
+			</div>
+			</form>
+			<a href="#" class="button"  title="requisition" onclick="openPopupEditDetail(this,'');" style="margin-top:0px; width: 30%;">
+				Add Item
+			</a>
+			
+			<form id="requisitionDetailForm">
+			<div class="list-block virtual-list media-list"></div>
+
+			</form>	
+         </div>
+      </div>
+    </div>
+  </div>
+</div>

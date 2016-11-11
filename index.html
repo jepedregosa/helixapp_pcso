@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Helix Mobile</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/helix.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" type="text/css" href="css/icomoon.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+	
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <ul>
+            <li><a href="#" class="button button-big " style="margin-left:0px;"><span class="fa fa-gears"></span> Profile Settings</a></li>
+            <li><a href="#" class="button button-big " style="margin-left:0px;"><span class="fa fa-key"></span> Change Password</a></li>
+            <li><a href="#" class="button button-big external" style="margin-left:0px;" onclick="doLogout();"><span class="fa fa-power-off"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        
+		
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed no-toolbar">
+          <!-- Index Page-->
+          <div data-page="index" class="page no-toolbar no-swipeback">
+		  <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!--<div class="center sliding">Helix Login</div>-->
+            <!--<div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"> <i class="icon icon-bars"></i></a>
+            </div>-->
+          </div>
+        </div>
+            <div class="page-content logincontent">
+		  <form id="form-login-pcso" class="store-data">
+			<span class="pcsologo"></span>
+			<!--<div style="position:relative; top:-40px;"><center><span style="font-size:2em; color:#fff;">Helix CAS</span></center>-->
+			<div class="list-block loginpage">
+			  <ul>
+				<li class="item-content" style="display:none;">
+					<div class="item-media"><i class="icon fa fa-tag"></i></div>  
+					<div class="item-inner">
+						<!--<div class="item-title label">Client Code</div>-->
+						<div class="item-input item-input-field">
+							<input type="text" name="clientid" value="PCSO_JOEL" class="form-control" placeholder="DB Server"/>
+						</div>
+					</div>
+				</li>
+				<li class="item-content" style="display:none;">
+					<div class="item-media"><i class="icon fa fa-industry"></i></div>  
+				  <div class="item-inner form-group">
+					<!--<div class="item-title label">Company</div>-->
+					<div class="item-input item-input-field">
+					  <input type="text" name="companyid" value="PCSO" class="form-control" placeholder="Company"/>
+					</div>
+				  </div>
+				</li>
+				<li class="item-content">
+				  <div class="item-media"><i class="icon fa fa-user"></i></div>  
+				  <div class="item-inner form-group"> 
+					<!--<div class="item-title label">Username</div>-->
+					<div class="item-input item-input-field">
+					  <input type="text" name="username" class="form-control" placeholder="Username" autocomplete="off"/>
+					</div>
+				  </div>
+				</li>
+				<li class="item-content">
+					<div class="item-media"><i class="icon fa fa-key"></i></div>  
+					<div class="item-inner form-group">
+					  <!--<div class="item-title label">Password</div>-->
+					  <div class="item-input item-input-field">
+						<input type="password" name="password" class="form-control" placeholder="Password"/>
+					  </div>
+					</div>
+				</li>
+			  </ul>
+			</div>
+			<div class="list-block">
+			  <ul>
+				  <li><input type="button" id="login-submit" value="Sign In" onclick="validate()"/></li>
+			  </ul>
+			  <br/>
+			  <!--<center><a href="#" style="font-size: 12px; color: #fff;">Forgot Password?</a></center>
+			  <div class="list-block-label">Some text about login information.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>-->
+			</div>
+			</div>
+		  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <!-- Path to your app/modules js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+	<script type="text/javascript" src="js/actionbuttons.js"></script>
+	<script type="text/javascript" src="js/charity.js"></script>
+	<script type="text/javascript" src="js/dashboard.js"></script>
+	<!--<script type="text/javascript" src="js/delivery.js"></script>-->
+	<script type="text/javascript" src="js/goodsreceipt.js"></script>
+	<script type="text/javascript" src="js/journal.js"></script>
+	<!--<script type="text/javascript" src="js/payment.js"></script>-->
+	<script type="text/javascript" src="js/prizeclaim.js"></script>
+	<script type="text/javascript" src="js/procurement.js"></script>
+	<script type="text/javascript" src="js/receipt.js"></script>
+	<script type="text/javascript" src="js/requestforpayment.js"></script>
+	<script type="text/javascript" src="js/requisition.js"></script>
+	<script type="text/javascript" src="js/sales.js"></script>
+	<!--<script type="text/javascript" src="js/salesorder.js"></script>-->
+	<script type="text/javascript" src="js/voucher.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
+    <!-- Path to your app plugins js-->
+	<script type="text/javascript" src="js/plugins/jqplot.barRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.categoryAxisRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.dateAxisRenderer.js"></script>	
+	<script type="text/javascript" src="js/plugins/jqplot.pieRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.enhancedPieLegendRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.logAxisRenderer.js"></script>	
+	<script type="text/javascript" src="js/plugins/jqplot.canvasTextRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
+	<script type="text/javascript" src="js/plugins/jqplot.canvasAxisTickRenderer.js"></script>
+  </body>
+</html>

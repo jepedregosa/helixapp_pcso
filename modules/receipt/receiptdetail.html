@@ -1,0 +1,72 @@
+<div class="pages">
+  <div data-page="forapprovaldetail" class="page navbar-fixed">
+	<!--<a href="#" class="floating-button color-pink">
+		<i class="icon fa fa-pencil"></i>
+	</a>-->
+	<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+		<div class="center sliding">Receipt Detail</div>
+		<div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
+	  </div>
+	</div>
+	<!-- Speed Dial Wrap -->
+	  <div class="speed-dial">
+		<!-- FAB inside will open Speed Dial actions -->
+		<a href="#" class="floating-button" onclick="toggleactionbuttons(this,'')">
+		  <!-- First icon is visible when Speed Dial actions are closed -->
+		  <i class="icon fa fa-plus"></i>
+		  <!-- Second icon is visible when Speed Dial actions are opened -->
+		  <i class="icon fa fa-minus"></i>
+		</a>
+		<!-- Speed Dial Actions -->
+		<div class="speed-dial-buttons">
+		  <!-- First Speed Dial button -->
+		  <a href="#" title="Approve" onclick="toggleactionbuttons(this,'Approve')">
+			<i class="icon fa fa-check"></i>
+		  </a>
+		  <!-- Second Speed Dial  button -->
+		  <a href="#" title="Reject" onclick="toggleactionbuttons(this,'Reject')">
+			<i class="icon fa fa-remove"></i>
+		  </a>
+		  <!-- Third Speed Dial  button -->
+		  <a href="#" title="Return To Maker" onclick="toggleactionbuttons(this,'Return To Maker')">
+			<i class="icon fa fa-mail-reply"></i>
+		  </a>
+		</div>
+	  </div>
+	  <!-- End of Speed Dial -->
+    <div class="page-content">
+      <div class="content-block">
+        <div class="content-block-inner">
+		  {{#each forapproval}}	
+          <h3>Ref No: {{TranID}}</h3>
+          <ul>
+			<li id={{SeqID}} class="dataToBePassed"><b>Ref Date</b> - {{TranDate}}</li>
+			<li><b>Customer</b> - {{VendorName}}</li>
+			<!--<li><b>SLName</b> - {{SLName}}</li>-->
+			<li><b>Amount</b> - {{CurCode}} {{DocAmount}}</li>
+			<li><b>Particulars</b> - {{Memo}}</li>
+			<li><b>Status</b> - {{Status}}</li>
+          </ul>
+		  {{/each}}
+		  <div class="list-block media-list" style="margin-top:0px;">
+		  {{#each forapprovaldetail}}	
+		  <ul>
+			<li class="item-content">
+				<!--<div class="item-media">{{TranID}}</div>-->
+				<div class="item-inner">
+				  <div class="item-title"><b>{{Account}}</b></div>	
+				  <div class="item-subtitle"><b>{{AccountDesc}}</b></div>
+				  <!--<div class="item-subtitle"><b>{{SubDesc}}</b></div>-->
+				</div>
+				<div class="item-after">{{CurCode}} {{Amount}}</div>
+			</li>
+		  </ul>
+		  {{/each}}
+		  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

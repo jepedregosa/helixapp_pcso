@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Helix Mobile</title>
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <!--<p>Right panel content goes here</p>-->
+        <ul>
+            <li><a href="#" class="button button-big " style="margin-left:0px;"><span class="fa fa-gears"></span> Profile Settings</a></li>
+            <li><a href="#" class="button button-big " style="margin-left:0px;"><span class="fa fa-key"></span> Change Password</a></li>
+            <li><a href="#" class="button button-big " style="margin-left:0px;" onclick="doLogout();"><span class="fa fa-power-off"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+	<!-- Views-->
+    <div class="views">	
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+       
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-fixed no-toolbar no-swipeback">
+          <!-- Index Page-->
+          <div class="page">
+		  <div class="navbar">
+          <div class="navbar-inner">
+            <div class="center sliding">Helix Mobile</div>
+            <div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
+          </div>
+        </div>
+            <div class="page-content maincontent">
+			 <!-- Top Navbar-->
+        
+              <div class="list-block">
+                <ul>
+				  <li><a href="#" class="item-link item-content" onclick="dashboardmenu()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Dashboard</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="requisitionlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Requisition</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="procurementlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Purchase Order</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="voucherlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Voucher</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="charitylist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Charity</div>
+                      </div></a></li>
+                  <li><a href="#" class="item-link item-content" onclick="prizeclaimlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Prize Claim</div>
+                      </div></a></li> 					  
+                  <li><a href="#" class="item-link item-content" onclick="paymentrequestlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Request for Payment</div>
+                      </div></a></li>
+				  <!--<li><a href="#" class="item-link item-content" onclick="paymentlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Payment</div>
+                      </div></a></li>-->
+				  <li><a href="#" class="item-link item-content" onclick="goodsreceiptlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Goods Receipt</div>
+                      </div></a></li>
+				 <!-- <li><a href="#" class="item-link item-content" onclick="journallist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Journal</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="salesorderlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Sales Order</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="deliverylist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Delivery</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="saleslist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Sales</div>
+                      </div></a></li>
+				  <li><a href="#" class="item-link item-content" onclick="receiptlist()">
+                      <div class="item-inner"> 
+                        <div class="item-title">Receipt</div>
+                      </div></a></li>-->
+				</ul>
+              </div>
+			  
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <!-- <div class="toolbar">-->
+          <!--<div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>-->
+        <!-- </div>-->
+      </div>
+    </div>
+  </body>
+</html>
