@@ -1,7 +1,7 @@
 //var SERVER_ADDRESS = "http://192.168.0.104:8080/helixapp_pcso";
-//var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
-//var SERVER_ADDRESS = "http://116.93.120.29:8080/helixapp_pcso";
-var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
+var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
+//var SERVER_ADDRESS = "http://116.93.120.29:8080/helixapp";
+//var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
 var USERNAME;
 
 var TODAY = new Date();
@@ -118,7 +118,7 @@ var myApp = new Framework7({
 function validate(){
    var formData = myApp.formToJSON('#form-login-pcso');
    formData.companyid = "pcso";
-   formData.clientid = "pcso_live";
+   formData.clientid = "pcso_prod";
    //alert(formData.clientid);
 	 $$.ajax({
 		url: SERVER_ADDRESS + "/loginservlet?option=AUTHLOGIN",
@@ -227,4 +227,12 @@ function doLogout(){
 			});
 		}
 	);
+}
+
+function maintenance(){
+	mainView.router.loadPage({url:'./maintenance.html', ignoreCache:true});	
+}
+	
+function approval(){
+	mainView.router.loadPage({url:'./approval.html', ignoreCache:true});	
 }

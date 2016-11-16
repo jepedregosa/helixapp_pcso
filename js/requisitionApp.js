@@ -1,4 +1,4 @@
-function requisitionlist(){
+function requisitionApprovalList(){
 	$$.ajax({
 		url: SERVER_ADDRESS + "/requisition?option=header",
 		contentType: 'jsonp',
@@ -7,7 +7,7 @@ function requisitionlist(){
 		dataType : 'jsonp',
 		crossDomain: true,
 		success: function( response ) {
-			mainView.router.loadPage({url:'./modules/requisition/requisition.html', ignoreCache:true,
+			mainView.router.loadPage({url:'./modules/requisition/approval/requisition.html', ignoreCache:true,
 				context:{
 					forapproval: JSON.parse(response),
 					username: sessionStorage.getItem("username")
@@ -20,7 +20,7 @@ function requisitionlist(){
 	});
 }
 
-function requisitiondetaillist(obj){
+function requisitiondetailApprovalList(obj){
 	var seqid = obj.title;
 	var action = obj.title;
 	if(seqid==null||seqid=="Edit"||seqid==""){
@@ -60,7 +60,7 @@ function requisitiondetaillist(obj){
 						
 						masterObj[0].DocAmount = nf.format(masterObj[0].DocAmount);
 						
-						mainView.router.loadPage({url:'./modules/requisition/requisitioneditdetail.html?BatNbr=' + rec.BatNbr + '&SeqID=' + rec.SeqID, ignoreCache:true,context:{
+						mainView.router.loadPage({url:'./modules/requisition/approval/requisitioneditdetail.html?BatNbr=' + rec.BatNbr + '&SeqID=' + rec.SeqID, ignoreCache:true,context:{
 						header: masterObj,
 						detail: detailList,
 						username: sessionStorage.getItem("username")
@@ -84,7 +84,7 @@ function requisitiondetaillist(obj){
 						
 						masterObj[0].DocAmount = nf.format(masterObj[0].DocAmount);								
 						
-						mainView.router.loadPage({url:'./modules/requisition/requisitiondetail.html?BatNbr=' + rec.BatNbr + '&SeqID=' + rec.SeqID, ignoreCache:true,
+						mainView.router.loadPage({url:'./modules/requisition/approval/requisitiondetail.html?BatNbr=' + rec.BatNbr + '&SeqID=' + rec.SeqID, ignoreCache:true,
 						context:{
 							header: masterObj,
 							detail: detailList,
@@ -104,7 +104,7 @@ function requisitiondetaillist(obj){
 	});
 }
 
-myApp.onPageInit('requisition', function (page) {
+myApp.onPageInit('requisitionApp', function (page) {
  	myApp.showIndicator();
 	
 	$$.ajax({
@@ -165,7 +165,7 @@ myApp.onPageInit('requisition', function (page) {
 	});
 });
 
-myApp.onPageAfterAnimation('requisition', function (page) {
+myApp.onPageAfterAnimation('requisitionApp', function (page) {
 	myApp.showIndicator();
 	
 	$$.ajax({
@@ -184,7 +184,7 @@ myApp.onPageAfterAnimation('requisition', function (page) {
 			
 			try{
 			var test = "requsition";	
-			var moduleList = test+"detaillist(this)";	
+			var moduleList = test+"detailApprovalList(this)";	
 			// Create virtual list
 			virtualList = myApp.virtualList($$(page.container).find('.virtual-list'), {
 				// Pass array with items
@@ -228,7 +228,7 @@ myApp.onPageAfterAnimation('requisition', function (page) {
 	});
 });
 
-myApp.onPageInit('requisitioneditdetail', function (page) {
+myApp.onPageInit('requisitioneditdetailApp', function (page) {
 	
 	console.log(page.query);
 	
