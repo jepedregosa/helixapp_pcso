@@ -1,5 +1,5 @@
 <div class="pages">
-  <div data-page="charitydetail" class="page navbar-fixed">
+  <div data-page="charitydetailApp" class="page navbar-fixed">
 	<!--<a href="#" class="floating-button color-pink">
 		<i class="icon fa fa-pencil"></i>
 	</a>-->
@@ -21,13 +21,17 @@
 		</a>
 		<!-- Speed Dial Actions -->
 		<div class="speed-dial-buttons">
-		   <!-- First Speed Dial button -->
-		  <a href="#" title="Edit" onclick="charitydetaillist(this)">
-			<i class="icon fa fa-pencil"></i>
-		  </a>
 		  <!-- First Speed Dial button -->
-		  <a href="#" title="Delete" onclick="toggleactionbuttons(this,'Delete')">
-			<i class="icon icon-bin"></i>
+		  <a href="#" title="Approve" onclick="toggleactionbuttons(this,'Approve')">
+			<i class="icon fa fa-check"></i>
+		  </a>
+		  <!-- Second Speed Dial  button -->
+		  <a href="#" title="Reject" onclick="toggleactionbuttons(this,'Reject')">
+			<i class="icon fa fa-remove"></i>
+		  </a>
+		  <!-- Third Speed Dial  button -->
+		  <a href="#" title="Return To Maker" onclick="toggleactionbuttons(this,'Return To Maker')">
+			<i class="icon fa fa-mail-reply"></i>
 		  </a>
 		</div>
 	  </div>

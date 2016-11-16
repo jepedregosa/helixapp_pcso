@@ -1,12 +1,12 @@
 <div class="pages">
-  <div data-page="charitydetail" class="page navbar-fixed">
+  <div data-page="procurementdetail" class="page navbar-fixed">
 	<!--<a href="#" class="floating-button color-pink">
 		<i class="icon fa fa-pencil"></i>
 	</a>-->
 	<div class="navbar">
 	  <div class="navbar-inner">
 		<div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-		<div class="center sliding">Charity Detail</div>
+		<div class="center sliding">Procurement Detail</div>
 		<div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
 	  </div>
 	</div>
@@ -21,13 +21,17 @@
 		</a>
 		<!-- Speed Dial Actions -->
 		<div class="speed-dial-buttons">
-		   <!-- First Speed Dial button -->
-		  <a href="#" title="Edit" onclick="charitydetaillist(this)">
-			<i class="icon fa fa-pencil"></i>
-		  </a>
 		  <!-- First Speed Dial button -->
-		  <a href="#" title="Delete" onclick="toggleactionbuttons(this,'Delete')">
-			<i class="icon icon-bin"></i>
+		  <a href="#" title="Approve" onclick="toggleactionbuttons(this,'Approve')">
+			<i class="icon fa fa-check"></i>
+		  </a>
+		  <!-- Second Speed Dial  button -->
+		  <a href="#" title="Reject" onclick="toggleactionbuttons(this,'Reject')">
+			<i class="icon fa fa-remove"></i>
+		  </a>
+		  <!-- Third Speed Dial  button -->
+		  <a href="#" title="Return To Maker" onclick="toggleactionbuttons(this,'Return To Maker')">
+			<i class="icon fa fa-mail-reply"></i>
 		  </a>
 		</div>
 	  </div>
@@ -35,29 +39,32 @@
     <div class="page-content">
       <div class="content-block">
         <div class="content-block-inner">
+		<div class="list-block media-list" style="margin-top:0px;">
 		  {{#each forapproval}}	
           <h3>Ref No: {{TranID}}</h3>
           <ul>
-			<li id={{BatNbr}} title="charity" class="dataToBePassed"><b>Ref Date</b> - {{TranDate}}</li>
-			<li><b>Claimant</b> - {{VendorName}}</li>
+			<li id={{SeqID}} title="procurement" class="dataToBePassed"><b>Ref Date</b> - {{TranDate}}</li>
+			<li><b>Vendor</b> - {{VendorName}}</li>
 			<!--<li><b>SLName</b> - {{SLName}}</li>-->
 			<li><b>Amount</b> - {{CurCode}} {{DocAmount}}</li>
 			<li><b>Particulars</b> - {{Memo}}</li>
 			<li><b>Status</b> - {{Status}}</li>
           </ul>
 		  {{/each}}
+		  </div>
 		  <div class="list-block media-list" style="margin-top:0px;">
 		  {{#each forapprovaldetail}}	
 		  <ul>
-			<li class="item-content">
-				<!--<div class="item-media">{{TranID}}</div>-->
-				<div class="item-inner">
-				  <div class="item-title"><b>{{Account}}</b></div>	
-				  <!--<div class="item-subtitle"><b>{{AccountDesc}}</b></div>-->
-				  <div class="item-subtitle">{{ItemDescription}}</div>
-				  <!--<div class="item-subtitle"><b>{{SubDesc}}</b></div>-->
+			<li>
+				<div class="item-content">
+					<div class="item-inner">
+					  <div class="item-title"><b>{{ItemID}}</b></div>	
+					  <div class="item-subtitle"><b>{{ItemDescription}}</b></div>
+					  <div class="item-subtitle"><b>{{Qty}} {{Unit}}</b></div>
+					  <!--<div class="item-subtitle"><b>{{Unit}}</b></div>-->
+					</div>
+					<div class="item-after">{{CurCode}} {{Amount}}</div>
 				</div>
-				<div class="item-after">{{CurCode}} {{Amount}}</div>
 			</li>
 		  </ul>
 		  {{/each}}

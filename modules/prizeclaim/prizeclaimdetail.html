@@ -22,16 +22,12 @@
 		<!-- Speed Dial Actions -->
 		<div class="speed-dial-buttons">
 		  <!-- First Speed Dial button -->
-		  <a href="#" title="Approve" onclick="toggleactionbuttons(this,'Approve')">
-			<i class="icon fa fa-check"></i>
+		  <a href="#" title="Edit" onclick="prizeclaimdetaillist(this)">
+			<i class="icon fa fa-pencil"></i>
 		  </a>
-		  <!-- Second Speed Dial  button -->
-		  <a href="#" title="Reject" onclick="toggleactionbuttons(this,'Reject')">
-			<i class="icon fa fa-remove"></i>
-		  </a>
-		  <!-- Third Speed Dial  button -->
-		  <a href="#" title="Return To Maker" onclick="toggleactionbuttons(this,'Return To Maker')">
-			<i class="icon fa fa-mail-reply"></i>
+		  <!-- First Speed Dial button -->
+		  <a href="#" title="Delete" onclick="toggleactionbuttons(this,'Delete')">
+			<i class="icon icon-bin"></i>
 		  </a>
 		</div>
 	  </div>
@@ -56,8 +52,8 @@
 			<li class="item-content">
 				<!--<div class="item-media">{{TranID}}</div>-->
 				<div class="item-inner">
-				  <div class="item-title"><b>{{Account}}</b></div>	
-				  <div class="item-subtitle"><b>{{AccountDesc}}</b></div>
+				  <div class="item-subtitle">Game Type: {{ItemID}}</div>	
+				  <div class="item-subtitle">Ticket #: {{ItemDescription}}</div>
 				  <!--<div class="item-subtitle"><b>{{SubDesc}}</b></div>-->
 				</div>
 				<div class="item-after">{{CurCode}} {{Amount}}</div>

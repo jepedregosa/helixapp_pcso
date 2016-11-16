@@ -1,12 +1,12 @@
 <div class="pages">
-  <div data-page="paymentrequestdetail" class="page navbar-fixed">
+  <div data-page="forapprovaldetail" class="page navbar-fixed">
 	<!--<a href="#" class="floating-button color-pink">
 		<i class="icon fa fa-pencil"></i>
 	</a>-->
 	<div class="navbar">
 	  <div class="navbar-inner">
 		<div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-		<div class="center sliding">Request for Payment Detail</div>
+		<div class="center sliding">Goods Receipt Detail</div>
 		<div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
 	  </div>
 	</div>
@@ -39,33 +39,35 @@
     <div class="page-content">
       <div class="content-block">
         <div class="content-block-inner">
-		  {{#each forapproval}}	
-          <h3>Ref No: {{TranID}}</h3>
-          <ul>
-			<li id={{BatNbr}} title="paymentrequest" class="dataToBePassed"><b>Ref Date</b> - {{TranDate}}</li>
-			<li><b>Claimant</b> - {{VendorName}}</li>
-			<!--<li><b>SLName</b> - {{SLName}}</li>-->
-			<li><b>Amount</b> - {{CurCode}} {{DocAmount}}</li>
-			<li><b>Particulars</b> - {{Memo}}</li>
-			<li><b>Status</b> - {{Status}}</li>
-          </ul>
-		  {{/each}}
-		  <div class="list-block media-list" style="margin-top:0px;">
-		  {{#each forapprovaldetail}}	
-		  <ul>
-			<li class="item-content">
-				<!--<div class="item-media">{{TranID}}</div>-->
-				<div class="item-inner">
-				  <div class="item-title">{{Account}}</div>	
-				  <div class="item-subtitle">{{ItemDescription}}</div>
-				  <!--<div class="item-subtitle"><b>{{SubDesc}}</b></div>-->
-				</div>
-				<div class="item-after">{{CurCode}} {{Amount}}</div>
-			</li>
-		  </ul>
-		  {{/each}}
-		  </div>
-        </div>
+	{{#each forapproval}}	
+	  <h3>Ref No: {{TranID}}</h3>
+	  <ul style="list-style:none;">
+		<li id={{SeqID}} class="dataToBePassed"><b>Ref Date</b> - {{TranDate}}</li>
+		<li><b>Vendor</b> - {{VendorName}}</li>
+		<!--<li><b>SLName</b> - {{SLName}}</li>-->
+		<li><b>Amount</b> - {{CurCode}} {{DocAmount}}</li>
+		<li><b>Particulars</b> - {{Memo}}</li>
+		<li><b>Status</b> - {{Status}}</li>
+	  </ul>
+	  {{/each}}
+	  <div class="list-block media-list" style="margin-top:0px;">
+	  {{#each forapprovaldetail}}	
+	  <ul>
+		<li class="item-content">
+			<!--<div class="item-media">{{TranID}}</div>-->
+			<div class="item-inner">
+			  <div class="item-title"><b>{{ItemID}}</b></div>	
+			  <div class="item-subtitle"><b>{{ItemDescription}}</b></div>
+			  <div class="item-subtitle"><b>{{Qty}} {{Unit}}</b></div>
+			  <!--<div class="item-subtitle"><b>{{Unit}}</b></div>-->
+			</div>
+			<div class="item-after">{{CurCode}} {{Amount}}</div>
+		</li>
+	  </ul>
+	  {{/each}}
+	  </div>
+	  
+	  </div>
       </div>
     </div>
   </div>
