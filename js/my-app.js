@@ -1,7 +1,7 @@
 //var SERVER_ADDRESS = "http://192.168.0.104:8080/helixapp_pcso";
-var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
+//var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
 //var SERVER_ADDRESS = "http://116.93.120.29:8080/helixapp";
-//var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
+var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
 var USERNAME;
 
 var TODAY = new Date();
