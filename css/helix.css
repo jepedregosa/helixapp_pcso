@@ -1,9 +1,9 @@
 body:after{
-	content: "beta trial version";
+	content: "beta trial \A version";
 	position: fixed;
-	width: 137px;
+	width: 145px;
 	height: 40px;
-	bottom: 7px;
+	bottom: 8px;
 	left: -37px;
 	text-align: center;
 	font-size: 13px;
@@ -16,6 +16,7 @@ body:after{
 	-webkit-transform: rotate(37deg);
 	transform: rotate(37deg);
 	z-index: 9999;
+	white-space: pre;
 	background: #ff0000;	
 }
 
@@ -49,7 +50,7 @@ body:after{
 	/*top: 12%;*/
 	height: 90px;
 	width: 90%;
-	background: url('../img/helixlogo.png') center center no-repeat transparent / contain;
+	background: url('../img/helixlogo1.png') center center no-repeat transparent / contain;
 	/*border-radius: 50%;*/
 	/*-webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
