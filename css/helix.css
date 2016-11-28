@@ -44,13 +44,12 @@ body:after{
 
 .logincontent .pcsologo{
 	display: block;
-	position: relative;
 	margin: 0 auto;
 	/*top:-50px;*/
 	/*top: 12%;*/
-	height: 90px;
-	width: 90%;
-	background: url('../img/helixlogo1.png') center center no-repeat transparent / contain;
+	height: 16px;
+	width: 66%;
+	background: url('../img/hireslogohelix.png') center center no-repeat transparent / contain;
 	/*border-radius: 50%;*/
 	/*-webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -60,14 +59,17 @@ body:after{
 #form-login-pcso{
 	padding: 20px;
 	padding-bottom: 0px;
-	background: #0c5890;
-	border-radius: 30px;
+	/*background: #0c5890;*/
+	background: #f7f7f7;
+	border-radius: 4px;
+	border-top: none;
 	margin: auto;
-	margin-top: 10%;
-	width: 82%;
-	-webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+	margin-top: 25px;
+	width: 270px;
+	/*-webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);*/
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.3)
 }
 
 .panel-right{
@@ -111,12 +113,12 @@ body:after{
 #login-submit{
     padding: 0 15px;
     text-align: center;
-    color: #007aff;
+    color: #fff;
     display: block;
     line-height: 43px;
     margin: auto;
     border: none;
-    background: none;
+    background: #007aff;
     font-size: 1.2em;
     width: 100%;
 }
@@ -394,8 +396,9 @@ html:not(.watch-active-state) .speed-dial-buttons a:active,
 
 
 .page-content{
-	background: #2970a5;
-	color: #fff;
+	/*background: #2970a5;*/
+	background: #fff;
+	color: #000;
 	/*-webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);*/
@@ -432,7 +435,8 @@ html:not(.watch-active-state) .speed-dial-buttons a:active,
 .list-block li{
 	background: #fff;
 	color: #000;
-	border-bottom: 1px solid #ccc;
+	/*border-bottom: 1px solid #ccc;*/
+	border: 1px solid #ccc;
 }
 
 .list-block ul:before{
@@ -446,7 +450,7 @@ html:not(.watch-active-state) .speed-dial-buttons a:active,
 #form-login-pcso .list-block li, #masterForm .list-block li, .view-popup .list-block li{
 	background: #fff;
 	color: #000;
-	border-radius: 0px;
+	border-radius: 4px;
 	margin-top: 5px;
 }
 
@@ -456,4 +460,15 @@ html:not(.watch-active-state) .speed-dial-buttons a:active,
 
 .searchbar{
 	background: #00bfff;
+}
+
+.infinite-scroll-preloader{
+	margin-top:-20px;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+.infinite-scroll-preloader .preloader{
+	width: 34px;
+	height: 34px;
 }
