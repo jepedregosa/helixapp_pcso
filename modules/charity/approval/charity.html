@@ -1,9 +1,12 @@
 
 <div class="pages">
-  <div data-page="charityApp" class="page navbar-fixed">
+  <div data-page="charityApp" class="page navbar-fixed charityApp">
   <div class="navbar">
   <div class="navbar-inner">
-    <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="left sliding">
+		<a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a>
+		<a href="#" class="remove link" style="display:none; font-size: 25px; margin-top: 20px;" onclick="hideCheckBox()"><i class="icon fa fa-remove"></i></a>
+	</div>
     <div class="center sliding">Charity Approval</div>
     <div class="right"><a href="#" class="link icon-only open-panel" data-panel="right"><i class="icon fa fa-gear"></i></a></div>
   </div>
@@ -14,20 +17,60 @@
 		</div>
 		<a href="#" class="searchbar-cancel"><i class="icon fa fa-remove"></i></a>
 	</form>
-	
 	<!-- Search Bar overlay -->
 	 <div class="searchbar-overlay"></div>
-	 
-    <div class="page-content">
+	 <!-- Speed Dial Wrap -->
+	  <div class="speed-dial">
+		<!-- FAB inside will open Speed Dial actions -->
+		<a href="#" class="floating-button" onclick="toggleactionbuttons(this,'')">
+		  <!-- First icon is visible when Speed Dial actions are closed -->
+		  <i class="icon icon-arrow-up"></i>
+		  <!-- Second icon is visible when Speed Dial actions are opened -->
+		  <i class="icon icon-arrow-down"></i>
+		</a>
+		<!-- Speed Dial Actions -->
+		<div class="speed-dial-buttons">
+		  <!-- First Speed Dial button -->
+		  <a href="#" title="Approve" onclick="toggleactionbuttons(this,'Approve')">
+			<i class="icon fa fa-check"></i>
+		  </a>
+		  <!-- Second Speed Dial  button -->
+		  <a href="#" title="Reject" onclick="toggleactionbuttons(this,'Reject')">
+			<i class="icon fa fa-remove"></i>
+		  </a>
+		  <!-- Third Speed Dial  button -->
+		  <a href="#" title="Return To Maker" onclick="toggleactionbuttons(this,'Return To Maker')">
+			<i class="icon fa fa-mail-reply"></i>
+		  </a>
+		</div>
+	  </div>
+	  <!-- End of Speed Dial -->
+    <div class="page-content infinite-scroll">
       <!-- <div class="content-block-title">Voucher</div>-->
 	  <!-- This block will be displayed if nothing found -->
 	  <div class="content-block searchbar-not-found">
 		<div class="content-block-inner">Nothing found</div>
 	  </div>
-	  
-      <div class="list-block list-block-search searchbar-found virtual-list media-list">
+	  <div class="list-block media-list checkall" style="margin:10px 0px 0px 0px; display:none;">
+		<ul>
+			<li>
+				<label class="label-checkbox item-content" >
+				<input type="checkbox" name="my-checkbox-checkall" onchange="checkAllFunction()">
+				<div class="item-media">
+					<i class="icon icon-form-checkbox"></i>
+				</div>
+				<div class="item-inner">
+					<div class="item-title-row">
+						<div class="item-title tranIDMaster" >Check All</div>
+					</div>
+				</div>
+				</label>
+			</li>
+		</ul>	
+	  </div>
+      <div class="virtual-list-charity list-block list-block-search searchbar-found virtual-list media-list" style="margin-top:10px;">
 		  <!-- keep it empty -->
-		</div>
+	  </div>
     </div>
   </div>
 </div>
