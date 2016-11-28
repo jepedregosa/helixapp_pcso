@@ -1,7 +1,7 @@
 //var SERVER_ADDRESS = "http://192.168.0.104:8080/helixapp_pcso";
-//var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
+var SERVER_ADDRESS = "http://localhost:8080/helixapp_pcso";
 //var SERVER_ADDRESS = "http://116.93.120.29:8080/helixapp";
-var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
+//var SERVER_ADDRESS = "https://cas.pcso.gov.ph/helixapp_pcso";
 var USERNAME;
 
 var TODAY = new Date();
@@ -51,7 +51,7 @@ $$(document).on('pageInit', function (e) {
 								crossDomain: true,
 								xhrFields: {withCredentials: true},
 						 success: function( response1 ) {
-							 /*myApp.alert(response1, 'DEBUG');*/
+							 myApp.alert(response1, 'DEBUG');
 							 var r1 = JSON.parse(response1);
 								username = r1.name;
 								sessionStorage.setItem("username",r1.name);
@@ -109,7 +109,8 @@ var myApp = new Framework7({
         myApp.hideIndicator();
     },
 	uniqueHistoryIgnoreGetParameters: true,
-	preloadPreviousPage: true
+	preloadPreviousPage: true,
+	tapHold: true
 	/*,
 	smartSelectBackOnSelect: true,
 	smartSelectOpenIn:'picker'*/
@@ -118,7 +119,7 @@ var myApp = new Framework7({
 function validate(){
    var formData = myApp.formToJSON('#form-login-pcso');
    formData.companyid = "pcso";
-   formData.clientid = "pcso_live";
+   formData.clientid = "pcso_prod";
    //alert(formData.clientid);
 	 $$.ajax({
 		url: SERVER_ADDRESS + "/loginservlet?option=AUTHLOGIN",
